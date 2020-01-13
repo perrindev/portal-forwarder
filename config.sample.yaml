@@ -1,0 +1,5 @@
+host: ''
+user: ''
+pass: ''
+port: 3000
+debug: 0
