@@ -82,22 +82,22 @@ async function init () {
 
 // DEFAULT ROUTE
 router.get('/', async function (req, res, next) {
-    res.send("select a /type[posts|pages]/<pageID>");
+  return res.render('error', { message: 'Invalid request', error: {} });
 });
 
 // LOAD WP RESOURCES
 router.get('/:type/:pageID', async function (req, res, next) {
 
   if (!currentSessionValid) {
-    return res.send('NO VALID SESSSION');
+    return res.render('error', { message: 'No open wordpress session', error: {} });
   }
 
   if (!req.params || !req.params.type) {
-    return res.send('No type provided');
+    return res.render('error', { message: 'Invalid request', error: {} });
   }
 
   if (!req.params || !req.params.pageID) {
-    return res.send('No pageID provided');
+    return res.render('error', { message: 'Invalid request', error: {} });
   }
 
   const request = {
@@ -112,8 +112,7 @@ router.get('/:type/:pageID', async function (req, res, next) {
     const response = await axios(request);
     res.render('index', { content: response.data.content.rendered });
   } catch (error) {
-    console.log(error);
-    res.send("TEST FAIL");
+    res.render('error', { message: 'Failed to load content', error });
   }
 });
 
