@@ -28,7 +28,7 @@ let currentSessionValid;
  * @return  {String} The token
  */
 async function createSession () {
-  console.log("create session");
+  console.log('trying to create session');
   const authParams = {
     username: config.user,
     password: config.pass
@@ -44,7 +44,7 @@ async function createSession () {
  * @return  {Bool} True if valid, false if not
  */
 async function validateSession (token) {
-  console.log(`validate session`);
+  console.log('trying to validate session');
   const request = {
     method: 'post',
     url: `${JWT_API_URL}/token/validate`,
