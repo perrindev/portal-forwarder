@@ -1,5 +1,6 @@
-host: ''
+apihost: ''
 user: ''
 pass: ''
 port: 3000
+host: 'localhost'
 debug: 0
