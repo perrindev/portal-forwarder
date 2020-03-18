@@ -110,7 +110,10 @@ router.get('/:type/:pageID', async function (req, res, next) {
   
   try {
     const response = await axios(request);
-    res.render('index', { content: response.data.content.rendered });
+    res.render('index', { 
+      content: response.data.content.rendered,
+      title: response.data.title.rendered
+    });
   } catch (error) {
     res.render('error', { message: 'Failed to load content', error });
   }

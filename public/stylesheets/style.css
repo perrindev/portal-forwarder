@@ -1,6 +1,9 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:700&display=swap");
+
 body {
   padding: 0px;
-  font: Montserrat,helvetica, arial, sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
   /* display: flex; */
   /* flex-direction: row; */
   /* justify-content: space-around; */
@@ -9,85 +12,91 @@ body {
   margin: 0 auto;
 }
 
-.birthday-header {
+.header {
   font-size: 6em;
   color: white;
   text-shadow: 0 0 13px #000;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 4px;
-  padding: 30px 0 30px 0;
+  padding: 30px 20%;
   background-color: red;
-  background-image: url("http://perrinwear.com/employeeportal/wp-content/uploads/2019/09/Perrin-Colorful-Shirts_desktop.jpg");
-
+  text-align: center;
+  background-image: url("../images/header.jpg");
 }
 
-.birthday-container {
+.container {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
 
-a {
+
+/* 
+    BIRTHDAYS & ANNIVERSARIES
+*/
+.container .widget a {
   color: red; 
 }
- 
 
- h3 {
-   font-size: 2.75em;
-   font-weight: 900 !important;
-   text-transform: uppercase;
-   letter-spacing: 2px;
-   border-bottom: 2px solid #b7b9c4;
- 
- }
-
- img.avatar.avatar-96.photo {
-    display: none;
+.container .widget h3 {
+  font-size: 2.75em;
+  font-weight: 900 !important;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-bottom: 2px solid #b7b9c4;
 }
 
-li {
+.container .widget img.avatar.avatar-96.photo {
+  display: none;
+}
+
+.container .widget li {
   list-style-type: none;
   text-decoration: none;
   padding-bottom: 34px;
   font-size: 2em;
 }
 
-ul {
+.container .widget ul {
   padding: 0;
-  
 }
 
-
-.birthdays-container span.label {
+.container .widget span.label {
     color: #003764;
     font-weight: bold;
 }
 
 /* strong {
   color: #003764 !important;
-}
- */
-.widget .intern-padding ul.birthdays-list li i{
+} */
+.container .widget .intern-padding ul.birthdays-list li i{
   color: #b7b9c4;
   font-weight: 00 !important;
 
 }
 
-span.badge.badge-primary.badge-pill {
+.container .widget span.badge.badge-primary.badge-pill {
     color: #003762;
     font-weight: bold;
 }
 
-
-span.badge.badge-primary.badge-pill:nth-child(3) {
+.container .widget span.badge.badge-primary.badge-pill:nth-child(3) {
     color: #da0000!important;
 }
 
-span.badge.badge-primary.badge-pill {
+.container .widget span.badge.badge-primary.badge-pill {
   padding: 0 10px 0 0px!important;
 }
 
-.birthdays-container span.label:nth-child(4) {
-    display: none;
+.container .widget span.label:nth-child(4) {
+  display: none;
+}
+
+
+/* 
+    INDEED JOBS
+*/
+.container .indeed_jobs strong {
+  color: chartreuse; 
 }
