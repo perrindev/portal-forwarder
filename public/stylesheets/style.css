@@ -2,11 +2,7 @@
 
 body {
   padding: 0px;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 15px;
-  /* display: flex; */
-  /* flex-direction: row; */
-  /* justify-content: space-around; */
+  font: 'Montserrat', sans-serif;
   text-align: center;
   color: #282a34;
   margin: 0 auto;
@@ -72,7 +68,6 @@ body {
 } */
 .container .widget .intern-padding ul.birthdays-list li i{
   color: #b7b9c4;
-  font-weight: 00 !important;
 
 }
 
