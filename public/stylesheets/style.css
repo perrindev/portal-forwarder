@@ -19,6 +19,10 @@ body {
   background-color: red;
   text-align: center;
   background-image: url("../images/header.jpg");
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .container {
@@ -95,8 +99,12 @@ body {
 .container .indeed_jobs p {
     list-style-type: none;
     text-decoration: none;
-    font-size: 3em;
+    font-size: 2.75em;
     width: 100%;
+    display:flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content: center;
 }
 
 .container .indeed_jobs p:nth-child(10) {
