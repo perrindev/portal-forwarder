@@ -1,8 +1,93 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; 
+  padding: 0px;
+  font: Montserrat,helvetica, arial, sans-serif;
+  /* display: flex; */
+  /* flex-direction: row; */
+  /* justify-content: space-around; */
+  text-align: center;
+  color: #282a34;
+  margin: 0 auto;
+}
+
+.birthday-header {
+  font-size: 6em;
+  color: white;
+  text-shadow: 0 0 13px #000;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  padding: 30px 0 30px 0;
+  background-color: red;
+  background-image: url("http://perrinwear.com/employeeportal/wp-content/uploads/2019/09/Perrin-Colorful-Shirts_desktop.jpg");
+
+}
+
+.birthday-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 a {
-  color: #00B7FF; 
+  color: red; 
+}
+ 
+
+ h3 {
+   font-size: 2.75em;
+   font-weight: 900 !important;
+   text-transform: uppercase;
+   letter-spacing: 2px;
+   border-bottom: 2px solid #b7b9c4;
+ 
+ }
+
+ img.avatar.avatar-96.photo {
+    display: none;
+}
+
+li {
+  list-style-type: none;
+  text-decoration: none;
+  padding-bottom: 34px;
+  font-size: 2em;
+}
+
+ul {
+  padding: 0;
+  
+}
+
+
+.birthdays-container span.label {
+    color: #003764;
+    font-weight: bold;
+}
+
+/* strong {
+  color: #003764 !important;
+}
+ */
+.widget .intern-padding ul.birthdays-list li i{
+  color: #b7b9c4;
+  font-weight: 00 !important;
+
+}
+
+span.badge.badge-primary.badge-pill {
+    color: #003762;
+    font-weight: bold;
+}
+
+
+span.badge.badge-primary.badge-pill:nth-child(3) {
+    color: #da0000!important;
+}
+
+span.badge.badge-primary.badge-pill {
+  padding: 0 10px 0 0px!important;
+}
+
+.birthdays-container span.label:nth-child(4) {
+    display: none;
 }
