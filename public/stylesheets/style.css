@@ -19,7 +19,7 @@ body {
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 4px;
-  padding: 30px 20%;
+  padding: 30px 15%;
   background-color: red;
   text-align: center;
   background-image: url("../images/header.jpg");
@@ -97,6 +97,16 @@ body {
 /* 
     INDEED JOBS
 */
-.container .indeed_jobs strong {
-  color: chartreuse; 
+.container .indeed_jobs p {
+    list-style-type: none;
+    text-decoration: none;
+    font-size: 3em;
+}
+
+.container .indeed_jobs p:nth-child(10) {
+    display: none;
+}
+
+.container .indeed_jobs a {
+  display: none;
 }
