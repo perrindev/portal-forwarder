@@ -15,20 +15,24 @@ body {
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 4px;
-  padding: 30px 15%;
+  padding: 30px 20%;
   background-color: red;
   text-align: center;
   background-image: url("../images/header.jpg");
   height: 20vh;
-  display: flex;
+  /*   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: center; */
 }
 
-.container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+.container:after {
+/*     display: flex; */
+    /* flex-direction: row; */
+    /* justify-content: space-around; */
+  content: "";
+  display: table;
+  clear: both;
+
 }
 
 
@@ -39,12 +43,21 @@ body {
   color: red; 
 }
 
+.widget {
+  float: left;
+  width: 48%;
+  padding: 10px;
+  margin-left: 11px;
+}
+
 .container .widget h3 {
   font-size: 2.75em;
   font-weight: 900 !important;
   text-transform: uppercase;
   letter-spacing: 2px;
   border-bottom: 2px solid #b7b9c4;
+  width: 90%;
+  margin-left: 50px;
 }
 
 .container .widget img.avatar.avatar-96.photo {
