@@ -15,7 +15,7 @@ try {
   process.exit(1);
 }
 
-const BASE_URL = config.host;
+const BASE_URL = config.apihost;
 const JWT_API_URL = `${BASE_URL}/wp-json/jwt-auth/v1`;
 const API_URL = `${BASE_URL}/wp-json/wp/v2`;
 
