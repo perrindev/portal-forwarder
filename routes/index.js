@@ -15,6 +15,8 @@ try {
   process.exit(1);
 }
 
+const RESULTS_CACHE = {};
+
 const BASE_URL = config.apihost;
 const JWT_API_URL = `${BASE_URL}/wp-json/jwt-auth/v1`;
 const API_URL = `${BASE_URL}/wp-json/wp/v2`;
@@ -100,22 +102,41 @@ router.get('/:type/:pageID', async function (req, res, next) {
     return res.render('error', { message: 'Invalid request', error: {} });
   }
 
+  const path = `${API_URL}/${req.params.type}/${req.params.pageID}`;
+
   const request = {
     method: 'get',
-    url: `${API_URL}/${req.params.type}/${req.params.pageID}`,
+    url: path,
     headers: {
       Authorization: `Bearer ${currentToken}`
     }
   };
   
+  let response = null;
+  let error = null;
   try {
-    const response = await axios(request);
-    res.render('index', { 
+    response = await axios(request);
+  } catch (err) {
+    error = err;
+  }
+
+  if (response !== null) {
+    RESULTS_CACHE[path] = {
       content: response.data.content.rendered,
       title: response.data.title.rendered
-    });
-  } catch (error) {
+    };
+    res.render('index', RESULTS_CACHE[path]);
+  } else if (RESULTS_CACHE.hasOwnProperty(path)) {
+    console.log('failed to load - using cache');
+    console.log('error', error);
+    res.render('index', RESULTS_CACHE[path]);
+  } else if (error !== null) {
+    console.log('failed to load - no cache and error');
+    console.log('error', error);
     res.render('error', { message: 'Failed to load content', error });
+  } else {
+    console.log('failed to load - no cache and unkown error');
+    res.render('error', { message: 'Failed to load content', error: 'Unknown error' });
   }
 });
 
