@@ -1,0 +1,26 @@
+[Unit]
+Description=Wordpress Forwarder for Employee Portal
+After=network.target
+
+[Service]
+ExecStart=/home/administrator/.nvm/versions/node/v10.17.0/bin/node ./bin/www
+WorkingDirectory=/var/portal-forwarder
+Environment=NODE_ENV=production
+Environment=NODE_TLS_REJECT_UNAUTHORIZED=0
+Environment=PATH="/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/home/administrator/.nvm/versions/node/v10.17.0/bin"
+
+# Restart timing
+Restart=always
+RestartSec=60
+
+# Output to syslog
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=portal-forwarder
+
+# User & group to run service as
+User=administrator
+Group=administrator
+
+[Install]
+WantedBy=multi-user.target
