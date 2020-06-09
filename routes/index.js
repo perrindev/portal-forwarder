@@ -67,11 +67,11 @@ async function validateSession (token) {
 };
 
 /**
- * Initialize the wordpress connection
+ * openSessionialize the wordpress connection
  *
  * @return  {void}
  */
-async function init () {
+async function openSession () {
   const response = await createSession();
   currentToken = response.token;
   currentSessionValid = await validateSession(currentToken);
@@ -128,7 +128,13 @@ router.get('/:type/:pageID', async function (req, res, next) {
     res.render('index', RESULTS_CACHE[path]);
   } else if (RESULTS_CACHE.hasOwnProperty(path)) {
     console.log('failed to load - using cache');
-    console.log('error', error);
+    if (response.status === 403) {
+      console.log('got 403, attempting to restart session');
+      openSession();
+    } else {
+      console.log('error', error);
+    }
+
     res.render('index', RESULTS_CACHE[path]);
   } else if (error !== null) {
     console.log('failed to load - no cache and error');
@@ -140,6 +146,6 @@ router.get('/:type/:pageID', async function (req, res, next) {
   }
 });
 
-init();
+openSession();
 
 module.exports = router;
