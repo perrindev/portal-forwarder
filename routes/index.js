@@ -128,11 +128,11 @@ router.get('/:type/:pageID', async function (req, res, next) {
     res.render('index', RESULTS_CACHE[path]);
   } else if (RESULTS_CACHE.hasOwnProperty(path)) {
     console.log('failed to load - using cache');
-    if (response.status === 403) {
+    console.log('response', error);
+    
+    if (error.response && error.response.status === 403) {
       console.log('got 403, attempting to restart session');
       openSession();
-    } else {
-      console.log('error', error);
     }
 
     res.render('index', RESULTS_CACHE[path]);
