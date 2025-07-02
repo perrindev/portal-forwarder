@@ -1,6 +1,5 @@
 apihost: ''
-user: ''
-pass: ''
 port: 3000
 host: 'localhost'
 debug: 0
+authKey: 'your_auth_key_here'

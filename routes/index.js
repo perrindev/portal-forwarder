@@ -21,24 +21,8 @@ const BASE_URL = config.apihost;
 const JWT_API_URL = `${BASE_URL}/wp-json/jwt-auth/v1`;
 const API_URL = `${BASE_URL}/wp-json/wp/v2`;
 
-let currentToken;
+const currentToken = config.authKey;
 let currentSessionValid;
-
-/**
- * Creates a new session
- *
- * @return  {String} The token
- */
-async function createSession () {
-  console.log('trying to create session');
-  const authParams = {
-    username: config.user,
-    password: config.pass
-  };
-  const resp = await axios.post(`${JWT_API_URL}/token`, authParams);
-  const token = resp.data;
-  return token;
-};
 
 /**
  * Validate the current session
@@ -72,8 +56,6 @@ async function validateSession (token) {
  * @return  {void}
  */
 async function openSession () {
-  const response = await createSession();
-  currentToken = response.token;
   currentSessionValid = await validateSession(currentToken);
   if (currentSessionValid) {
     console.log(`session created successfully`);
