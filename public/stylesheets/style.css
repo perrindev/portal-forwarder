@@ -30,15 +30,18 @@ body {
 /* 
     BIRTHDAYS & ANNIVERSARIES
 */
+.container {
+  display: flex;
+}
+
 .container .widget a {
   color: red; 
 }
 
 .widget {
-  float: left;
+  margin: auto;
   width: 48%;
   padding: 10px;
-  margin-left: 11px;
 }
 
 .container .widget h3 {
