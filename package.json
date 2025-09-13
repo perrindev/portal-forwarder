@@ -7,7 +7,7 @@
     "make-token": "node make-token.js"
   },
   "dependencies": {
-    "axios": "^0.30.0",
+    "axios": "^1.12.0",
     "debug": "~2.6.9",
     "ejs": "~3.1.10",
     "express": "~4.21.2",
